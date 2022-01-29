@@ -1,0 +1,82 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           aoe4-text-build-orders
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/aoe4-text-build-orders#readme>
+homepage:       https://github.com/githubuser/aoe4-text-build-orders#readme
+bug-reports:    https://github.com/githubuser/aoe4-text-build-orders/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/aoe4-text-build-orders
+
+library
+  exposed-modules:
+      BuildOrderParser
+      Types
+  other-modules:
+      Paths_aoe4_text_build_orders
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , containers
+    , file-embed
+    , filepath
+    , optparse-applicative
+    , parsec
+    , text
+  default-language: Haskell2010
+
+executable aoe4-text-build-orders-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_aoe4_text_build_orders
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aoe4-text-build-orders
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , file-embed
+    , filepath
+    , optparse-applicative
+    , parsec
+    , text
+  default-language: Haskell2010
+
+test-suite aoe4-text-build-orders-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_aoe4_text_build_orders
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aoe4-text-build-orders
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , file-embed
+    , filepath
+    , optparse-applicative
+    , parsec
+    , text
+  default-language: Haskell2010

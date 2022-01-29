@@ -1,0 +1,24 @@
+* A tool for parsing text based Age of Empires 4 build order
+
+** Getting Started
+
+Disclaimer: Work in progress, feel free to add more functionality and
+fix some bugs.
+
+- Install [[https://docs.haskellstack.org/en/stable/README][Stack]]
+
+- Create a sample build order file, for example, in ~/tmp/build-order.txt~
+
+  #+BEGIN_SRC
+  # Basic build order
+  8 2 2 2 0 00:01 Villager
+  8 2 2 2 0 00:03 Villager,Archer
+  8 2 2 2 0 00:10 Villager, Cannon
+  #+END_SRC
+
+- Run the following command
+
+  #+BEGIN_SRC bash
+  stack run -- --input /tmp/build-order.txt --outdir /tmp
+  Parsed Build Order: Right (BuildOrder [Comment "# Basic build order",BuildStep {vTotal = 8, vFood = 2, vWood = 2, vGold = 2, vStone = 0, timestamp = 1, units = [Unit "Villager"]},BuildStep {vTotal = 8, vFood = 2, vWood = 2, vGold = 2, vStone = 0, timestamp = 3, units = [Unit "Villager",Unit "Archer"]},BuildStep {vTotal = 8, vFood = 2, vWood = 2, vGold = 2, vStone = 0, timestamp = 10, units = [Unit "Villager",Unit " Cannon"]}])
+  #+END_SRC
